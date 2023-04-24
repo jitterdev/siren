@@ -1,0 +1,10 @@
+{
+	"powers": [
+		"packnamehere:powernamehere"
+	],
+	"icon": "minecraft:water_bucket",
+	"order": 10,
+	"impact": 3,
+	"name": "Siren",
+	"description": "silly!"
+}

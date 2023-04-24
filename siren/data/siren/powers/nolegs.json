@@ -1,0 +1,26 @@
+{
+    "name": "No Legs",
+    "description": "h",
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "duration": 30,
+                "amplifier": 1
+            },
+            {
+                "effect": "minecraft:mining_fatigue",
+                "duration": 30,
+                "amplifier": 2
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water",
+        "inverted": true
+    },
+    "interval": 20
+}

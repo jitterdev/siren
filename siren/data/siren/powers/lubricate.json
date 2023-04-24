@@ -1,0 +1,48 @@
+{
+    "name": "Lubricate",
+    "description": "Natural regeneration is disabled when not submerged in water or exposed to rain, but gain Regeneration I when you are.",
+    "type": "origins:multiple",
+    "disableRegen": {
+        "type": "origins:disable_regen",
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "regeneration": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:regeneration",
+                    "duration": 30,
+                    "amplifier": 0
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water"
+                },
+                {
+                    "type": "origins:in_rain"
+                }
+            ]
+        }
+    }
+}

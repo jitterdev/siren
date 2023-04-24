@@ -1,0 +1,55 @@
+{
+	"name": "Fishy Business",
+	"description": "You have natural aqua affinity and underwater mobility like a merling.",
+	"type": "origins:multiple",
+	"break_grounded": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 5.0
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+				"type": "origins:submerged_in",
+				"fluid": "minecraft:water"
+			}, {
+				"type": "origins:using_effective_tool"
+			}, {
+				"type": "origins:on_block",
+				"block_condition": {
+					"type": "origins:movement_blocking"
+				}
+			}]
+		}
+	},
+	"break_float": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 25.0
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+				"type": "origins:submerged_in",
+				"fluid": "minecraft:water"
+			}, {
+				"type": "origins:using_effective_tool"
+			}, {
+				"type": "origins:power_active",
+				"power": "*:*_break_grounded",
+				"inverted": true
+			}]
+		}
+	},
+	"water_mobility": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "additionalentityattributes:water_speed",
+			"name": "Additional swim speed",
+			"value": 1.5,
+			"operation": "multiply_base"
+		}
+	}
+}
